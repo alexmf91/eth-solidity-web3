@@ -8,7 +8,7 @@ const source = fs.readFileSync(inboxPath, "utf8");
 const input = {
   language: "Solidity",
   sources: {
-    Inbox: {
+    "Inbox.sol": {
       content: source
     }
   },
@@ -22,10 +22,9 @@ const input = {
 };
 
 const { contracts } = JSON.parse(solc.compile(JSON.stringify(input)));
-const { abi, evm } = contracts.Inbox.Inbox;
-const bytecode = evm.bytecode.object;
+const { abi, evm } = contracts["Inbox.sol"].Inbox;
 
 module.exports = {
   abi,
-  bytecode
+  bytecode: evm.bytecode.object
 };
