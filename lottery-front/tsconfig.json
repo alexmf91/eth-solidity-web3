@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": ["./src/*"]
     },
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
