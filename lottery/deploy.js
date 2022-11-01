@@ -5,12 +5,14 @@ const { abi, bytecode } = require("./compile");
 
 const provider = new HDWalletProvider(
   "suit journey opinion foil access boss sketch stadium random fence repeat dismiss",
-  "https://rinkeby.infura.io/v3/d554970d906e482494a0dcdb1aa3819d"
+  "https://goerli.infura.io/v3/d554970d906e482494a0dcdb1aa3819d"
 );
 
 const web3 = new Web3(provider);
 
 const deploy = async () => {
+  console.log("deploy contract");
+
   const [account] = await web3.eth.getAccounts();
 
   console.log("Attempting to deploy from account", account);
@@ -20,6 +22,7 @@ const deploy = async () => {
     .send({ gas: "1000000", from: account });
 
   console.log("Contract deployed to", result.options.address);
+  console.log("Contract abi stringy", JSON.stringify(abi));
   provider.engine.stop();
 };
 
