@@ -20,7 +20,7 @@
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "tsconfig.json"
+    "project": "lottery-front"
   },
   "plugins": [
     "prettier",
@@ -74,7 +74,7 @@
       },
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "admin-front-vite/tsconfig.json"
+        "project": "lottery-front/tsconfig.json"
       }
     },
     "import/parsers": {
