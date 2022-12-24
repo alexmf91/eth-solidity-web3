@@ -1,3 +1,7 @@
+import 'semantic-ui-css/semantic.min.css'
+
+import { Header, Container } from './components'
+
 export default function RootLayout({
   children
 }: {
@@ -6,7 +10,12 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body>
+        <Container>
+          <Header />
+          {children}
+        </Container>
+      </body>
     </html>
   )
 }
