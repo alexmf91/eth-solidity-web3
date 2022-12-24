@@ -1,19 +1,17 @@
-import factory from '@crowd-coin/ethereum/factory'
-
-import CampaignsList from './components/CampaignList'
+import { CampaignsList } from './components'
 
 const getCampaigns = async () => {
-  const campaigns = await factory.methods.getDeployedCampaigns().call()
-  return campaigns
+  const campaigns = await fetch('http://localhost:3000/api/getCampaigns')
+  return campaigns.json()
 }
 
-export default async function Campaigns() {
+export default async function CampaignsPage() {
   const campaigns = await getCampaigns()
 
   return (
     <div>
-      <h1>Home Page app campaigns {JSON.stringify(campaigns)}</h1>
-      <CampaignsList items={campaigns} />
+      <h3>Open Campaigns</h3>
+      <CampaignsList campaigns={campaigns} />
     </div>
   )
 }
