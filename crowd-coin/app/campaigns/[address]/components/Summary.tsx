@@ -1,4 +1,5 @@
 'use client'
+
 import { Card } from 'semantic-ui-react'
 import { web3 } from '@crowd-coin/libs'
 
